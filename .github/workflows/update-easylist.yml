@@ -13,7 +13,7 @@ jobs:
       - name: Checkout 仓库
         uses: actions/checkout@v3
         with:
-          persist-credentials: true
+          persist-credentials: true  # 保证 push 权限
 
       - name: 设置 Python
         uses: actions/setup-python@v4
@@ -34,7 +34,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add easylist.txt
+          # commit 只在文件有变化时执行
           git diff-index --quiet HEAD || git commit -m "自动更新 EasyList"
+          # push，如果失败打印警告但不报错
           git push origin HEAD:main || echo "[WARN] Push 失败或权限不足"
 
       - name: 上传 artifact（可直接下载）
