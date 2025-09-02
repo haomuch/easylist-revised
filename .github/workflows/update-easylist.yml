@@ -1,0 +1,36 @@
+name: Update EasyList
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天 UTC 00:00 运行
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  update-easylist:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Run script to filter EasyList
+      run: python filter_easylist.py
+
+    - name: Commit and push changes
+      run: |
+        git config user.name "GitHub Action"
+        git config user.email "action@github.com"
+        git add filtered_easylist.txt
+        git commit -m "Update filtered EasyList" || echo "No changes to commit"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
