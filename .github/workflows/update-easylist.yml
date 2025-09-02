@@ -1,46 +1,41 @@
-name: Update EasyList
+name: Update EasyList Daily
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # 每天 UTC 0 点触发
-  workflow_dispatch:     # 手动触发
+    - cron: "0 0 * * *"  # 每天 UTC 00:00 运行
+  workflow_dispatch:  # 支持手动触发
 
 jobs:
   update-easylist:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout 仓库
+      - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          persist-credentials: true  # 保证 push 权限
 
-      - name: 设置 Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.x"
 
-      - name: 安装依赖
-        run: pip install requests
-
-      - name: 运行过滤脚本
-        run: python filter.py
-
-      - name: 查看生成文件（调试）
-        run: ls -la
-
-      - name: 提交更新到主分支（安全）
+      - name: Install dependencies
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add easylist.txt
-          # commit 只在文件有变化时执行
-          git diff-index --quiet HEAD || git commit -m "自动更新 EasyList"
-          # push，如果失败打印警告但不报错
-          git push origin HEAD:main || echo "[WARN] Push 失败或权限不足"
+          python -m pip install --upgrade pip
+          pip install requests
 
-      - name: 上传 artifact（可直接下载）
-        uses: actions/upload-artifact@v4
-        with:
-          name: easylist
-          path: easylist.txt
+      - name: Run EasyList update script
+        run: python update_easylist.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add modified_easylist.txt
+          git commit -m "Update modified EasyList $(date -u)"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate download link
+        run: |
+          echo "Modified EasyList URL: https://raw.githubusercontent.com/${{ github.repository }}/main/modified_easylist.txt"
