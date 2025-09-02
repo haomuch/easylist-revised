@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.PAT_TOKEN }}  # 使用 PAT 进行 checkout
+          token: ${{ secrets.PAT_TOKEN }}  # 明确指定 PAT_TOKEN
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -33,7 +33,11 @@ jobs:
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
           git add modified_easylist.txt
-          git commit -m "Update modified EasyList $(date -u)"
-          git push origin main
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update modified EasyList $(date -u)"
+            git push origin main
+          fi
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}  # 使用 PAT 进行 push
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}  # 使用 PAT_TOKEN 进行 push
