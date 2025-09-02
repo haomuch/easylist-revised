@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT_TOKEN }}  # 使用 PAT 进行 checkout
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -32,10 +34,6 @@ jobs:
           git config --global user.email "action@github.com"
           git add modified_easylist.txt
           git commit -m "Update modified EasyList $(date -u)"
-          git push
+          git push origin main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate download link
-        run: |
-          echo "Modified EasyList URL: https://raw.githubusercontent.com/${{ github.repository }}/main/modified_easylist.txt"
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}  # 使用 PAT 进行 push
