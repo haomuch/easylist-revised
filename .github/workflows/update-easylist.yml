@@ -3,7 +3,7 @@ name: Update EasyList
 on:
   schedule:
     - cron: "0 0 * * *"  # 每天 UTC 0 点触发
-  workflow_dispatch:     # 支持手动触发
+  workflow_dispatch:     # 手动触发
 
 jobs:
   update-easylist:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout 仓库
         uses: actions/checkout@v3
         with:
-          persist-credentials: true  # 保证 push 权限
+          persist-credentials: true
 
       - name: 设置 Python
         uses: actions/setup-python@v4
@@ -34,13 +34,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add easylist.txt
-          # 只有有变化才 commit
           git diff-index --quiet HEAD || git commit -m "自动更新 EasyList"
-          # push，失败打印但不报错
           git push origin HEAD:main || echo "[WARN] Push 失败或权限不足"
 
       - name: 上传 artifact（可直接下载）
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: easylist
           path: easylist.txt
