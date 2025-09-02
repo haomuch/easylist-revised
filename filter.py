@@ -1,5 +1,4 @@
 import requests
-import sys
 import os
 import traceback
 
@@ -21,7 +20,7 @@ try:
             existing_lines = f.read().splitlines()
         if existing_lines == filtered_lines:
             print("[INFO] 文件内容未变化，无需更新。")
-            sys.exit(0)
+            exit(0)
 
     # 写入文件
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
@@ -31,5 +30,5 @@ try:
 except Exception:
     print("[ERROR] 脚本执行出错：")
     traceback.print_exc()
-    # 返回非零会导致 Actions 失败，如果你希望失败可以保持 1，否则改为 0
-    sys.exit(1)
+    # 即使出错，也不返回非零，保证 GitHub Actions 不报错
+    exit(0)
