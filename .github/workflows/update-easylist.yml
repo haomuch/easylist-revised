@@ -2,31 +2,32 @@ name: Update EasyList
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # 每天 0 点 UTC 运行
-  workflow_dispatch:       # 手动触发
+    - cron: "0 0 * * *"  # 每天 UTC 0 点触发
+  workflow_dispatch:     # 手动触发
 
 jobs:
-  build:
+  update-easylist:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout 仓库
         uses: actions/checkout@v3
 
-      - name: Set up Python
+      - name: 设置 Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.x"
 
-      - name: Install dependencies
+      - name: 安装依赖
         run: pip install requests
 
-      - name: Run filter script
+      - name: 运行过滤脚本
         run: python filter.py
 
-      - name: Commit changes
+      - name: 提交更新到仓库
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add easylist.txt
-          git commit -m "Update easylist" || echo "No changes"
+          git diff-index --quiet HEAD || git commit -m "自动更新 EasyList"
           git push
