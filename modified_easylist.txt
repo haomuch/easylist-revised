@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
-! Version: 202509190534
+! Version: 202509190646
 ! Title: EasyList
-! Last modified: 19 Sep 2025 05:34 UTC
+! Last modified: 19 Sep 2025 06:46 UTC
 ! Expires: 4 days (update frequency)
-! Commit: 866741d44c8e9e1c30d561f0e143bcd02d5494a9
+! Commit: 951a1b71d56a43c376078600bb7871e624f24d37
 ! *** easylist:template_header.txt ***
 ! 
 ! Please report any unblocked adverts or problems
@@ -20115,6 +20115,7 @@ browsershots.org#@#.advert_area
 ||bfeohxlzuo.com^
 ||bfhxcddikhkh.com^
 ||bfjhhdmznjh.club^
+||bfligiylbqypjkn.net^
 ||bfpartners.click^
 ||bfraircymryuh.xyz^
 ||bfsyuwyl.com^
@@ -20688,6 +20689,7 @@ browsershots.org#@#.advert_area
 ||boltepse.com^
 ||boltnunfirsthand.com^
 ||bombardjove.help^
+||bomborazygion.qpon^
 ||bombplinker.help^
 ||bomdog.com^
 ||bonaciretwine.digital^
@@ -24586,6 +24588,7 @@ browsershots.org#@#.advert_area
 ||desaltsallo.help^
 ||descendedlibrarian.com^
 ||descendentwringthou.com^
+||descentflewed.help^
 ||descentsafestvanity.com^
 ||descrepush.com^
 ||descriptionwhirl.com^
@@ -29792,6 +29795,7 @@ browsershots.org#@#.advert_area
 ||grotsunravel.shop^
 ||grotzenzelotic.com^
 ||grouchcopout.cfd^
+||grouchyinstance.pro^
 ||grouchyrecover.com^
 ||groufwarmth.shop^
 ||groundinquiryoccupation.com^
@@ -39551,6 +39555,7 @@ browsershots.org#@#.advert_area
 ||ornnxfsfnkwbs.space^
 ||ornoitemitred.shop^
 ||ornqfuox.com^
+||ornrggfh.com^
 ||orounounum.net^
 ||orpnoornpctk.com^
 ||orpoikxbbczi.com^
@@ -41785,6 +41790,7 @@ browsershots.org#@#.advert_area
 ||protagcdn.com^
 ||protally.net^
 ||protawe.com^
+||protecontemp.cfd^
 ||protectflow.life^
 ||protection-suggestion.com^
 ||protectioncleave.com^
@@ -44126,6 +44132,7 @@ browsershots.org#@#.advert_area
 ||rjliakirakufw.space^
 ||rjmagdairzath.website^
 ||rjmjflkndiqxw.site^
+||rjokawzwvrkaq.top^
 ||rjokawzwvrkmv.top^
 ||rjowzlkaz.today^
 ||rjpiaooc.com^
@@ -45354,6 +45361,7 @@ browsershots.org#@#.advert_area
 ||selfportraitscanty.com^
 ||selfpua.com^
 ||selfpuc.com^
+||selfreliantsurgery.pro^
 ||selfservicebondnewly.com^
 ||sellaryknelled.com^
 ||sellerher.com^
@@ -47651,6 +47659,7 @@ browsershots.org#@#.advert_area
 ||titanads5.com^
 ||titchatsufoalo.net^
 ||titmalsixthet.rest^
+||tittupyspitous.world^
 ||tivatingotherem.org^
 ||tivqggcgnqlom.space^
 ||tiypa.com^
@@ -48443,6 +48452,7 @@ browsershots.org#@#.advert_area
 ||ubknheanyjmd.com^
 ||ublasklnrnifs.site^
 ||ubmyqcleulnqa.website^
+||ubnduamnwmdoi.site^
 ||ubxdnqoim.net^
 ||ubxdnqoim.xyz^
 ||ucationinin.info^
@@ -48954,6 +48964,7 @@ browsershots.org#@#.advert_area
 ||urban-signal.pro^
 ||urbanercockily.cyou^
 ||urbpbkti.com^
+||urcadnhtikrlq.space^
 ||urealath.com^
 ||ureasesparlish.cyou^
 ||urechar.com^
@@ -49742,6 +49753,7 @@ browsershots.org#@#.advert_area
 ||vscogqhkhwdaf.space^
 ||vscvotonpbevv.site^
 ||vsdiz.xyz^
+||vsfswhpnyjnbv.space^
 ||vsimyppptdxdo.site^
 ||vslpnvutywvnb.space^
 ||vsovrhrdpry.com^
