@@ -1,6 +1,6 @@
 import requests
 
-def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf'):
+def update_config_file(url, new_rules, output_filename='优化版黑名单.conf'):
     """
     Downloads a configuration file, applies modifications, and saves the updated file.
 
@@ -33,6 +33,17 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
             # Skip (delete) the specified line
             elif "DOMAIN-SUFFIX,live.com,Proxy" in line:
                 print("Found and removed 'DOMAIN-SUFFIX,live.com,Proxy' rule.")
+                continue  # This line will not be added to updated_lines
+            # Skip (delete) the specified line
+            elif "DOMAIN-SUFFIX,api.onedrive.com,Proxy" in line:
+                print("Found and removed 'DOMAIN-SUFFIX,api.onedrive.com,Proxy' rule.")
+                continue  # This line will not be added to updated_lines
+            # Skip (delete) the specified line
+            elif "DOMAIN-SUFFIX,skyapi.live.net,Proxy" in line:
+                print("Found and removed 'DOMAIN-SUFFIX,skyapi.live.net,Proxy' rule.")
+                continue  # This line will not be added to updated_lines
+            elif "DOMAIN-SUFFIX,odc.officeapps.live.com,Proxy" in line:
+                print("Found and removed 'DOMAIN-SUFFIX,odc.officeapps.live.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
             # Add other lines as they are
             else:
@@ -74,12 +85,10 @@ DOMAIN-SUFFIX,apple.com,DIRECT
 DOMAIN-SUFFIX,icloud.com,DIRECT
 DOMAIN-SUFFIX,amazonaws.com.cn,DIRECT
 DOMAIN-SUFFIX,in.appcenter.ms,DIRECT
-DOMAIN-SUFFIX,api.onedrive.com,DIRECT
 DOMAIN-SUFFIX,pdst.fm,PROXY
 DOMAIN-SUFFIX,feeds.megaphone.fm,PROXY
 DOMAIN-SUFFIX,www.omnycontent.com,PROXY
 DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
     # Run the function
-
     update_config_file(config_url, rules_to_add)
