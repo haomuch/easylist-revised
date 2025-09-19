@@ -1,6 +1,6 @@
 import requests
 
-def update_config_file(url, new_rules, output_filename='优化版黑名单.conf'):
+def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf'):
     """
     Downloads a configuration file, applies modifications, and saves the updated file.
 
@@ -81,4 +81,5 @@ DOMAIN-SUFFIX,www.omnycontent.com,PROXY
 DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
     # Run the function
+
     update_config_file(config_url, rules_to_add)
