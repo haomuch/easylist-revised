@@ -44,6 +44,7 @@ jobs:
 
   update-blacklist:
     runs-on: ubuntu-latest
+    needs: update-easylist  # 新增: 在 update-easylist 成功完成后才开始运行
     
     steps:
       - name: Checkout repository
