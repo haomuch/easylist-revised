@@ -44,7 +44,7 @@ jobs:
 
   update-blacklist:
     runs-on: ubuntu-latest
-    needs: update-easylist  # 新增: 在 update-easylist 成功完成后才开始运行
+    needs: update-easylist  # 在 update-easylist 成功完成后才开始运行
     
     steps:
       - name: Checkout repository
@@ -69,6 +69,7 @@ jobs:
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
+          git pull origin main --rebase  # 新增：在推送前拉取并合并远程更改
           git add "优化版黑名单.conf"  # 确保文件名正确
           if git diff --staged --quiet; then
             echo "No changes to commit for blacklist"
