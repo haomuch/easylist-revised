@@ -101,8 +101,12 @@ DOMAIN-SUFFIX,amazonaws.com.cn,DIRECT
 DOMAIN-SUFFIX,in.appcenter.ms,DIRECT
 DOMAIN-SUFFIX,pdst.fm,PROXY
 DOMAIN-SUFFIX,feeds.megaphone.fm,PROXY
-DOMAIN-SUFFIX,www.omnycontent.com,PROXY
+DOMAIN-SUFFIX,omnycontent.com,PROXY
+DOMAIN-SUFFIX,mc.tritondigital.com,PROXY
+DOMAIN-SUFFIX,tracking.swap.fm,PROXY
+DOMAIN-SUFFIX,podtrac.com,PROXY
 DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
     # Run the function
     update_config_file(config_url, rules_to_add)
+
