@@ -26,6 +26,18 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
                 if "www.baidu.com" not in line:
                     line += ", www.baidu.com"
                 updated_lines.append(line)
+            # Modify dns-server line
+            elif line.startswith("dns-server ="):
+                if "https://dns.alidns.com/dns-query, https://doh.pub/dns-query" in line:
+                    line = "dns-server ="
+                    print("Modified dns-server line to remove DNS servers.")
+                updated_lines.append(line)
+            # Modify ipv6 line
+            elif line.startswith("ipv6 ="):
+                if "false" in line:
+                    line = "ipv6 = true"
+                    print("Modified ipv6 line from false to true.")
+                updated_lines.append(line)
             # Skip (delete) the specified line
             elif "DOMAIN-SUFFIX,microsoft.com,Proxy" in line:
                 print("Found and removed 'DOMAIN-SUFFIX,microsoft.com,Proxy' rule.")
