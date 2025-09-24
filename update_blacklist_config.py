@@ -26,6 +26,11 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
                 if "www.baidu.com" not in line:
                     line += ", www.baidu.com"
                 updated_lines.append(line)
+            # Modify the MITM line
+            if line.startswith("hostname ="):
+                if "yt3.ggpht.com" not in line:
+                    line += ",yt3.ggpht.com"
+                updated_lines.append(line)
             # Modify dns-server line
             elif line.startswith("dns-server ="):
                 if "https://dns.alidns.com/dns-query, https://doh.pub/dns-query" in line:
@@ -110,5 +115,6 @@ DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
     # Run the function
     update_config_file(config_url, rules_to_add)
+
 
 
