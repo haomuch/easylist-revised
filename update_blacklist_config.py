@@ -29,7 +29,7 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
             # Modify the MITM line
             if line.startswith("hostname ="):
                 if "yt3.ggpht.com" not in line:
-                    line += ",yt3.ggpht.com"
+                    line += ",yt3.ggpht.com,analytics.googleapis.com,ads.googleapis.com,*.doubleclick.net"
                 updated_lines.append(line)
             # Modify dns-server line
             elif line.startswith("dns-server ="):
@@ -115,6 +115,7 @@ DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
     # Run the function
     update_config_file(config_url, rules_to_add)
+
 
 
 
