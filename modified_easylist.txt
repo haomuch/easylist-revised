@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
-! Version: 202509242245
+! Version: 202509250032
 ! Title: EasyList
-! Last modified: 24 Sep 2025 22:45 UTC
+! Last modified: 25 Sep 2025 00:32 UTC
 ! Expires: 4 days (update frequency)
-! Commit: c42f9c0d055c89799de2550b11e72295a94af4f0
+! Commit: 0e71cf64dd64525e1a8b75e72fa6180cd77dbdc1
 ! *** easylist:template_header.txt ***
 ! 
 ! Please report any unblocked adverts or problems
@@ -15689,6 +15689,7 @@ browsershots.org#@#.advert_area
 ||26q4nn691.de^
 ||27352a740a.com^
 ||27igqr8b.de^
+||2830022a41.com^
 ||2838a86e6c.com^
 ||28b905d522.com^
 ||28c15cf09c.com^
@@ -18053,6 +18054,7 @@ browsershots.org#@#.advert_area
 ||aojhtyvd.com^
 ||aojlgmylzzoyq.top^
 ||aokgbiekzlqne.website^
+||aokxcojgnjjkv.online^
 ||aokxjkrmw.net^
 ||aoliterzgyhnv.website^
 ||aomgyawovbmw.top^
@@ -23280,6 +23282,7 @@ browsershots.org#@#.advert_area
 ||ctwmed.com^
 ||ctzsryncxsdkg.site^
 ||cubageostrich.com^
+||cubagesteeny.shop^
 ||cubapringle.click^
 ||cubbiesfeasten.click^
 ||cubersdope.life^
@@ -25738,6 +25741,7 @@ browsershots.org#@#.advert_area
 ||efvedjhdwmmcj.store^
 ||efvhgnxbgiwxa.site^
 ||efwukoulnhdluki.org^
+||efxumler.com^
 ||efykoaeajpzvy.site^
 ||egcqpvjtuvqk.com^
 ||egcuxefgvsjpw.online^
@@ -26853,6 +26857,7 @@ browsershots.org#@#.advert_area
 ||f10f9df901.com^
 ||f1617d6a6a.com^
 ||f1851c0962.com^
+||f18ddd0d1a.com^
 ||f23d7665ac.com^
 ||f29c4af968.com^
 ||f3010e5e7a.com^
@@ -27160,6 +27165,7 @@ browsershots.org#@#.advert_area
 ||fef86b659b.com^
 ||fefezjvaxkoqi.website^
 ||fefinegoldforeyes.com^
+||fegori.xyz^
 ||fehlqppruztrc.site^
 ||feignoccasionedmound.com^
 ||feijsojvphjqh.online^
@@ -32110,6 +32116,7 @@ browsershots.org#@#.advert_area
 ||ioredi.com^
 ||iornjqfdcrjjy.store^
 ||iosjscxobtbkk.store^
+||iothkkqpgplrc.website^
 ||iotohcaxbfnzb.site^
 ||iotwyxhnjyw.com^
 ||iouyechctsbmz.vip^
@@ -43237,6 +43244,7 @@ browsershots.org#@#.advert_area
 ||qwoeuhoeav.com^
 ||qwpsgqyzrzcr.life^
 ||qwrwawwlrlkyr.top^
+||qwrwawwlrzayz.top^
 ||qwrwawwlrzjvo.top^
 ||qwrwawwlrzjyw.top^
 ||qwrwhosailedbe.info^
@@ -44554,6 +44562,7 @@ browsershots.org#@#.advert_area
 ||rmzkqkvvrqqzk.top^
 ||rmzpwvgiwcpcm.space^
 ||rmzsglng.com^
+||rnbkuydkblend.site^
 ||rnccnwtekuerb.space^
 ||rndchandelureon.com^
 ||rndhaunteran.com^
@@ -45797,6 +45806,7 @@ browsershots.org#@#.advert_area
 ||serch26.biz^
 ||sereanstanza.com^
 ||seredobjet.cfd^
+||serenedust.pro^
 ||serenitymareaffection.com^
 ||serfismaryls.help^
 ||seriatetawing.cfd^
@@ -46458,6 +46468,7 @@ browsershots.org#@#.advert_area
 ||snithykurgan.qpon^
 ||snjgbykak.com^
 ||snjjfdfzvkcdp.online^
+||snljexumhfcyx.online^
 ||snomoneyandf.com^
 ||snoodslinable.digital^
 ||snoopundesirable.com^
@@ -48752,6 +48763,7 @@ browsershots.org#@#.advert_area
 ||tuckedtucked.com^
 ||tuckerheiau.com^
 ||tucwydhulyyuk.net^
+||tudrrynzkocdq.website^
 ||tuesdayfetidlit.com^
 ||tuesdaypeas.com^
 ||tuffoonincaged.com^
@@ -52377,6 +52389,7 @@ browsershots.org#@#.advert_area
 ||yusgoonbncwiu.site^
 ||yut4is9b.xyz^
 ||yutbmrzewookl.website^
+||yutbpejoljhdpc.com^
 ||yuthecapstan.org^
 ||yuyykdjtkdpat.store^
 ||yvcchjdiqzpog.rocks^
