@@ -68,6 +68,9 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
             elif "DOMAIN-SUFFIX,cdn.apple-mapkit.com,Proxy" in line:
                 print("Found and removed 'DOMAIN-SUFFIX,cdn.apple-mapkit.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
+            elif "DOMAIN-SUFFIX,apple.news,Proxy" in line:
+                print("Found and removed 'DOMAIN-SUFFIX,apple.news,Proxy' rule.")
+                continue  # This line will not be added to updated_lines            
             elif "DOMAIN-SUFFIX,bl.com,Proxy" in line:
                 print("Found and removed 'DOMAIN-SUFFIX,bl.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
@@ -113,6 +116,7 @@ if __name__ == "__main__":
     # New rules to add
     rules_to_add = """DOMAIN-SUFFIX,akadns.net,DIRECT
 DOMAIN-SUFFIX,apple.com,DIRECT
+DOMAIN-SUFFIX,apple-dns.com,DIRECT
 DOMAIN-SUFFIX,icloud.com,DIRECT
 DOMAIN-SUFFIX,amazonaws.com.cn,DIRECT
 DOMAIN-SUFFIX,in.appcenter.ms,DIRECT
@@ -128,6 +132,7 @@ DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
     # Run the function
     update_config_file(config_url, rules_to_add)
+
 
 
 
