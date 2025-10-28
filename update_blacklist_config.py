@@ -75,6 +75,8 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
                 continue  # This line will not be added to updated_lines
             elif "DOMAIN-SUFFIX,in.appcenter.ms,Proxy" in line:
                 continue  # This line will not be added to updated_lines
+            elif "DOMAIN-SUFFIX,spotify.com,Proxy" in line:
+                continue  # This line will not be added to updated_lines
             # Add other lines as they are
             else:
                 updated_lines.append(line)
@@ -111,7 +113,7 @@ if __name__ == "__main__":
     # New rules to add
     rules_to_add = """DOMAIN-SUFFIX,akadns.net,DIRECT
 DOMAIN-SUFFIX,apple.com,DIRECT
-DOMAIN-SUFFIX,apple-dns.com,DIRECT
+DOMAIN-SUFFIX,apple-dns.net,DIRECT
 DOMAIN-SUFFIX,icloud.com,DIRECT
 DOMAIN-SUFFIX,amazonaws.com.cn,DIRECT
 DOMAIN-SUFFIX,pdst.fm,PROXY
@@ -126,6 +128,7 @@ DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
     # Run the function
     update_config_file(config_url, rules_to_add)
+
 
 
 
