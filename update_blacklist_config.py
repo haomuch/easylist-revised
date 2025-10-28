@@ -48,49 +48,32 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
                 updated_lines.append(line)
             # Skip (delete) the specified line
             elif "DOMAIN-SUFFIX,microsoft.com,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,microsoft.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
-            # Skip (delete) the specified line
             elif "DOMAIN-SUFFIX,live.com,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,live.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
-            # Skip (delete) the specified line
             elif "DOMAIN-SUFFIX,api.onedrive.com,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,api.onedrive.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
-            # Skip (delete) the specified line
             elif "DOMAIN-SUFFIX,skyapi.live.net,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,skyapi.live.net,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
             elif "DOMAIN-SUFFIX,odc.officeapps.live.com,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,odc.officeapps.live.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
             elif "DOMAIN-SUFFIX,cdn.apple-mapkit.com,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,cdn.apple-mapkit.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
             elif "DOMAIN-SUFFIX,apple.news,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,apple.news,Proxy' rule.")
                 continue  # This line will not be added to updated_lines            
             elif "DOMAIN-SUFFIX,bl.com,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,bl.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
             elif "DOMAIN-SUFFIX,globalsign.com,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,globalsign.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
             elif "DOMAIN-SUFFIX,onedrive.com,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,onedrive.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
             elif "DOMAIN-SUFFIX,onedrive.live.com,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,onedrive.live.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
             elif "DOMAIN-SUFFIX,mobile.pipe.aria.microsoft.com,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,mobile.pipe.aria.microsoft.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
             elif "DOMAIN-SUFFIX,vortex.data.microsoft.com,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,vortex.data.microsoft.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
             elif "DOMAIN-SUFFIX,in.appcenter.ms,Proxy" in line:
-                print("Found and removed 'DOMAIN-SUFFIX,in.appcenter.ms,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
             # Add other lines as they are
             else:
@@ -143,6 +126,7 @@ DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
     # Run the function
     update_config_file(config_url, rules_to_add)
+
 
 
 
