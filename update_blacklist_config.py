@@ -77,6 +77,21 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
             elif "DOMAIN-SUFFIX,globalsign.com,Proxy" in line:
                 print("Found and removed 'DOMAIN-SUFFIX,globalsign.com,Proxy' rule.")
                 continue  # This line will not be added to updated_lines
+            elif "DOMAIN-SUFFIX,onedrive.com,Proxy" in line:
+                print("Found and removed 'DOMAIN-SUFFIX,onedrive.com,Proxy' rule.")
+                continue  # This line will not be added to updated_lines
+            elif "DOMAIN-SUFFIX,onedrive.live.com,Proxy" in line:
+                print("Found and removed 'DOMAIN-SUFFIX,onedrive.live.com,Proxy' rule.")
+                continue  # This line will not be added to updated_lines
+            elif "DOMAIN-SUFFIX,mobile.pipe.aria.microsoft.com,Proxy" in line:
+                print("Found and removed 'DOMAIN-SUFFIX,mobile.pipe.aria.microsoft.com,Proxy' rule.")
+                continue  # This line will not be added to updated_lines
+            elif "DOMAIN-SUFFIX,vortex.data.microsoft.com,Proxy" in line:
+                print("Found and removed 'DOMAIN-SUFFIX,vortex.data.microsoft.com,Proxy' rule.")
+                continue  # This line will not be added to updated_lines
+            elif "DOMAIN-SUFFIX,in.appcenter.ms,Proxy" in line:
+                print("Found and removed 'DOMAIN-SUFFIX,in.appcenter.ms,Proxy' rule.")
+                continue  # This line will not be added to updated_lines
             # Add other lines as they are
             else:
                 updated_lines.append(line)
@@ -116,7 +131,6 @@ DOMAIN-SUFFIX,apple.com,DIRECT
 DOMAIN-SUFFIX,apple-dns.com,DIRECT
 DOMAIN-SUFFIX,icloud.com,DIRECT
 DOMAIN-SUFFIX,amazonaws.com.cn,DIRECT
-DOMAIN-SUFFIX,in.appcenter.ms,DIRECT
 DOMAIN-SUFFIX,pdst.fm,PROXY
 DOMAIN-SUFFIX,feeds.megaphone.fm,PROXY
 DOMAIN-SUFFIX,omnycontent.com,PROXY
@@ -129,6 +143,7 @@ DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
     # Run the function
     update_config_file(config_url, rules_to_add)
+
 
 
 
