@@ -121,6 +121,7 @@ if __name__ == "__main__":
 DOMAIN-SUFFIX,apple.com,DIRECT
 DOMAIN-SUFFIX,apple-dns.net,DIRECT
 DOMAIN-SUFFIX,icloud.com,DIRECT
+DOMAIN-SUFFIX,bing.com,DIRECT
 DOMAIN-SUFFIX,amazonaws.com.cn,DIRECT
 DOMAIN-SUFFIX,pdst.fm,PROXY
 DOMAIN-SUFFIX,feeds.megaphone.fm,PROXY
@@ -134,6 +135,7 @@ DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
     # Run the function
     update_config_file(config_url, rules_to_add)
+
 
 
 
