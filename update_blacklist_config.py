@@ -27,12 +27,18 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
                     line += ", www.baidu.com"
                 updated_lines.append(line)
             # Modify the MITM line
-            if line.startswith("hostname ="):
-                line = line.replace(",*.googlevideo.com", "")
-            #remove *.googlevideo.com
-               # if "yt3.ggpht.com" not in line:
-                   # line += ",s.youtube.com,yt3.ggpht.com,i.ytime.com,play.googleapis.com,youtubei.googleapis.com,lh3.googleusercontent.com,analytics.googleapis.com,ads.googleapis.com,*.doubleclick.net"
-                   print("Modified hostname line to change MITM rules.")
+            elif line.startswith("hostname ="):
+                original_line = line
+                # 移除 *.googlevideo.com
+                if ",*.googlevideo.com" in line:
+                    line = line.replace(",*.googlevideo.com", "")
+    
+                # 可选：添加你需要的域名（取消注释以下两行即可启用）
+                # needed_domains = ",s.youtube.com,yt3.ggpht.com,i.ytime.com,play.googleapis.com,youtubei.googleapis.com,lh3.googleusercontent.com,analytics.googleapis.com,ads.googleapis.com,*.doubleclick.net"
+                # if not any(d in line for d in needed_domains.split(',')):
+                #     line += needed_domains
+
+                print("Modified hostname line to change MITM rules.")
                 updated_lines.append(line)
             # Modify dns-server line
             elif line.startswith("dns-server ="):
@@ -128,6 +134,7 @@ DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
     # Run the function
     update_config_file(config_url, rules_to_add)
+
 
 
 
