@@ -124,7 +124,7 @@ DOMAIN-SUFFIX,icloud.com,DIRECT
 DOMAIN-SUFFIX,bing.com,DIRECT
 DOMAIN-SUFFIX,amazonaws.com.cn,DIRECT
 DOMAIN-SUFFIX,pdst.fm,PROXY
-DOMAIN-SUFFIX,feeds.megaphone.fm,PROXY
+DOMAIN-SUFFIX,megaphone.fm,PROXY
 DOMAIN-SUFFIX,omnycontent.com,PROXY
 DOMAIN-SUFFIX,mc.tritondigital.com,PROXY
 DOMAIN-SUFFIX,tracking.swap.fm,PROXY
@@ -136,3 +136,4 @@ DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
     # Run the function
     update_config_file(config_url, rules_to_add)
+
