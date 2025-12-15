@@ -117,7 +117,8 @@ if __name__ == "__main__":
     config_url = "https://johnshall.github.io/Shadowrocket-ADBlock-Rules-Forever/sr_top500_banlist.conf"
     
     # New rules to add
-    rules_to_add = """DOMAIN-SUFFIX,akadns.net,DIRECT
+    rules_to_add = """DOMAIN-SUFFIX,spotify.com,DIRECT
+DOMAIN-SUFFIX,akadns.net,DIRECT
 DOMAIN-SUFFIX,apple.com,DIRECT
 DOMAIN-SUFFIX,apple-dns.net,DIRECT
 DOMAIN-SUFFIX,icloud.com,DIRECT
@@ -136,4 +137,5 @@ DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
     # Run the function
     update_config_file(config_url, rules_to_add)
+
 
