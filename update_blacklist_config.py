@@ -87,7 +87,7 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
             # Modify ipv6 line
             elif line.startswith("ipv6 ="):
                 if "false" in line:
-                    line = "ipv6 = false"
+                    line = "ipv6 = true"
                     print("Modified ipv6 line from false to true.")
                 updated_lines.append(line)
             # Add other lines as they are
@@ -125,4 +125,5 @@ if __name__ == "__main__":
 
     # Run the function
     update_config_file(config_url, RULES_TO_ADD)
+
 
