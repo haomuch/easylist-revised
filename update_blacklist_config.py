@@ -81,7 +81,7 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
             # Modify dns-server line
             elif line.startswith("dns-server ="):
                 if "https://dns.alidns.com/dns-query, https://doh.pub/dns-query" in line:
-                    line = "dns-server ="
+                    line = "dns-server = system"
                     print("Modified dns-server line to remove DNS servers.")
                 updated_lines.append(line)
             # Modify ipv6 line
@@ -125,5 +125,6 @@ if __name__ == "__main__":
 
     # Run the function
     update_config_file(config_url, RULES_TO_ADD)
+
 
 
