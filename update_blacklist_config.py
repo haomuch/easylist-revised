@@ -15,12 +15,11 @@ RULES_TO_REMOVE = [
     "DOMAIN-SUFFIX,onedrive.live.com,Proxy",
     "DOMAIN-SUFFIX,mobile.pipe.aria.microsoft.com,Proxy",
     "DOMAIN-SUFFIX,vortex.data.microsoft.com,Proxy",
-    "DOMAIN-SUFFIX,in.appcenter.ms,Proxy",
-    "DOMAIN-SUFFIX,spotify.com,Proxy"
+    "DOMAIN-SUFFIX,in.appcenter.ms,Proxy"
 ]
 
 # 新增规则列表，方便统一管理
-RULES_TO_ADD = """DOMAIN-SUFFIX,spotify.com,DIRECT
+RULES_TO_ADD = """
 DOMAIN-SUFFIX,akadns.net,DIRECT
 DOMAIN-SUFFIX,apple.com,DIRECT
 DOMAIN-SUFFIX,apple-dns.net,DIRECT
