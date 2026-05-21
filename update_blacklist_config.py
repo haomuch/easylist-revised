@@ -9,6 +9,7 @@ RULES_TO_REMOVE = [
     "DOMAIN-SUFFIX,odc.officeapps.live.com,Proxy",
     "DOMAIN-SUFFIX,cdn.apple-mapkit.com,Proxy",
     "DOMAIN-SUFFIX,apple.news,Proxy",
+    "DOMAIN-SUFFIX,apps.mzstatic.com,Proxy",
     "DOMAIN-SUFFIX,bl.com,Proxy",
     "DOMAIN-SUFFIX,globalsign.com,Proxy",
     "DOMAIN-SUFFIX,onedrive.com,Proxy",
