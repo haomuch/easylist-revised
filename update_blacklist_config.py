@@ -15,6 +15,7 @@ RULES_TO_REMOVE = [
     "DOMAIN-KEYWORD,amazon,Proxy",
     "DOMAIN-KEYWORD,aws,Proxy",
     "DOMAIN-SUFFIX,cachefly.net,Proxy",
+    "DOMAIN-SUFFIX,oschina.net,Proxy"
     "DOMAIN-SUFFIX,globalsign.com,Proxy",
     "DOMAIN-SUFFIX,onedrive.com,Proxy",
     "DOMAIN-SUFFIX,onedrive.live.com,Proxy",
