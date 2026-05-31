@@ -61,6 +61,7 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
         original_content = response.text
         lines = original_content.splitlines()
         updated_lines = []
+        removed_count = 0
 
         # 将要移除的规则做去空格的归一化处理，提高匹配鲁棒性
         normalized_remove_rules = {r.strip().replace(" ", "").lower() for r in RULES_TO_REMOVE}
@@ -77,6 +78,7 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
             # 优化点 2: 归一化后比对，避免因为大小写或多余空格导致过滤失效
             normalized_line = stripped_line.replace(" ", "").lower()
             if normalized_line in normalized_remove_rules:
+                removed_count += 1
                 continue
 
             # 优化点 3: 键值对健壮解析，防止等号两边空格格式变化导致无法匹配
@@ -124,6 +126,9 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
         # 重新组合修改后的行
         processed_content = "\n".join(updated_lines)
 
+        if removed_count > 0:
+            print(f"Successfully removed {removed_count} RULES_TO_REMOVE entries.")
+
         # Step 3: 查找插入点并添加新规则
         insertion_point = "[Rule]"
         
@@ -134,6 +139,7 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
             actual_insertion = processed_content[idx:idx+len(insertion_point)]
             parts = processed_content.split(actual_insertion, 1)
             final_content = parts[0] + actual_insertion + "\n" + new_rules.strip() + "\n" + parts[1]
+            print("Successfully inserted new rules into the '[Rule]' section.")
         else:
             print("Warning: '[Rule]' section not found. Appending rules to the end.")
             final_content = processed_content + "\n" + new_rules.strip()
