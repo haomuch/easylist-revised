@@ -89,8 +89,21 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
                 if key == "skip-proxy":
                     # 拆分成列表进行精确的 `in` 查重，避免子串误判
                     items = [item.strip() for item in val.split(',')]
-                    if "www.baidu.com" not in items:
-                        items.append("www.baidu.com")
+                    domains_to_add = [
+                        "www.baidu.com",
+                        "*.apple.com",
+                        "*.apps.apple.com",
+                        "*.itunes.apple.com",
+                        "*.mzstatic.com",
+                        "*.identity.apple.com",
+                        "*.gsa.apple.com",
+                        "*.hsa.apple.com",
+                        "*.phobos.apple.com",
+                        "init.itunes.apple.com"
+                    ]
+                    for domain in domains_to_add:
+                        if domain not in items:
+                            items.append(domain)
                     line = f"skip-proxy = {', '.join(items)}"
                     updated_lines.append(line)
                     
