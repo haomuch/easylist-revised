@@ -92,14 +92,7 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
                     domains_to_add = [
                         "www.baidu.com",
                         "*.apple.com",
-                        "*.apps.apple.com",
-                        "*.itunes.apple.com",
-                        "*.mzstatic.com",
-                        "*.identity.apple.com",
-                        "*.gsa.apple.com",
-                        "*.hsa.apple.com",
-                        "*.phobos.apple.com",
-                        "init.itunes.apple.com"
+                        "*.mzstatic.com"
                     ]
                     for domain in domains_to_add:
                         if domain not in items:
