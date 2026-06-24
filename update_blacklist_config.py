@@ -13,7 +13,6 @@ RULES_TO_REMOVE = {
     "DOMAIN-SUFFIX,apple.news,Proxy",
     "DOMAIN-SUFFIX,apps.mzstatic.com,Proxy",
     "DOMAIN-SUFFIX,bl.com,Proxy",
-    "DOMAIN-SUFFIX,cloudfront.net,Proxy",
     "DOMAIN-KEYWORD,amazon,Proxy",
     "DOMAIN-KEYWORD,aws,Proxy",
     "DOMAIN-SUFFIX,cachefly.net,Proxy",
@@ -33,7 +32,6 @@ DOMAIN-SUFFIX,apple-dns.net,DIRECT
 DOMAIN-SUFFIX,icloud.com,DIRECT
 DOMAIN-SUFFIX,bing.com,DIRECT
 DOMAIN-SUFFIX,amazonaws.com.cn,DIRECT
-DOMAIN-SUFFIX,cloudfront.net,DIRECT
 DOMAIN-SUFFIX,pdst.fm,PROXY
 DOMAIN-SUFFIX,megaphone.fm,PROXY
 DOMAIN-SUFFIX,omnycontent.com,PROXY
