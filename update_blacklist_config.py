@@ -43,7 +43,6 @@ DOMAIN-SUFFIX,files.oaiusercontent.com,PROXY
 DOMAIN-SUFFIX,grokipedia.com,PROXY
 DOMAIN-SUFFIX,gitflic.ru,PROXY
 DOMAIN-SUFFIX,mushroomtrack.com,PROXY
-DOMAIN-SUFFIX,sidestore.io,PROXY
 DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
 def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf'):
