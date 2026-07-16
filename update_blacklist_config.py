@@ -4,7 +4,6 @@ import requests
 # 提取需要移除的规则列表，转为集合 (Set) 以提高匹配效率
 RULES_TO_REMOVE = {
     "DOMAIN-SUFFIX,microsoft.com,Proxy",
-    "DOMAIN-SUFFIX,sidestore.io,Proxy",
     "DOMAIN-SUFFIX,live.com,Proxy",
     "DOMAIN-SUFFIX,api.onedrive.com,Proxy",
     "DOMAIN-SUFFIX,skyapi.live.net,Proxy",
@@ -21,6 +20,8 @@ RULES_TO_REMOVE = {
     "DOMAIN-SUFFIX,onedrive.live.com,Proxy",
     "DOMAIN-SUFFIX,mobile.pipe.aria.microsoft.com,Proxy",
     "DOMAIN-SUFFIX,vortex.data.microsoft.com,Proxy",
+    "DOMAIN-SUFFIX,sidestore.io,Proxy",
+    "DOMAIN-SUFFIX,tencent.com,Proxy",
     "DOMAIN-SUFFIX,in.appcenter.ms,Proxy"
 }
 
