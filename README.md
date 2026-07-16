@@ -1,9 +1,24 @@
-This repo is developed to modify the original EasyList for Adblock and Blacklist proxy rules for shadowrocket.
+# AdBlock & Shadowrocket Custom Rules
 
-The modified EasyList removes the line "||imasdk.googleapis.com^" from the original EasyList, so that video players on many websites won't be affected by this rule. (It's hard to understand why EasyList just won't remove this rule for such a long time)
+This repository provides customized and optimized filtering rules for Adblock and Shadowrocket, tailored for a smoother browsing experience.
 
-The modified EasyList will be automatically updated every day. If the original EasyList changed, a new modified list will be pushed accordingly. 
+---
 
-The optimized_blacklist.conf removes more than 15 rules from the original blacklist.conf, while adds more than 10 new rules, in order to make it much more useful and stable for iOS users.
+## 🚀 Features
 
-You can also build you own modified rules in your fork.
+### 1. Modified EasyList
+* **Optimized for Video Playback:** Removes the frustrating `||imasdk.googleapis.com^` rule from the original EasyList. This ensures video players on numerous websites load and function properly without getting broken by aggressive blocking.
+* **Auto-Updates:** The list automatically updates **every day**. If the upstream EasyList changes, a new modified version is generated and pushed immediately.
+
+> 💡 *Note: It remains a mystery why the official EasyList has kept this disruptive rule for so long!*
+
+### 2. Optimized Shadowrocket Blacklist (`optimized_blacklist.conf`)
+* **Cleaned Up:** Removed over **15 redundant or problematic rules** from the original `blacklist.conf`.
+* **Enhanced:** Added over **10 new rules** to improve filtering efficiency.
+* **Result:** A much more stable, reliable, and useful proxy experience specifically tailored for iOS users.
+
+---
+
+## 🛠️ Customization
+
+Want to tweak the rules yourself? You can easily **fork this repository** and modify the scripts to build your own custom rules.
