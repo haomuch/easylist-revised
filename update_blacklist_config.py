@@ -92,6 +92,7 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
                         "www.baidu.com",
                         "*.apple.com",
                         "kdns.fr",
+                        "eastmoney.com",
                         "*.mzstatic.com"
                     ]
                     for domain in domains_to_add:
