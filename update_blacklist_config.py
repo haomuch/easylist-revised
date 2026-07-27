@@ -31,9 +31,9 @@ DOMAIN-SUFFIX,akadns.net,DIRECT
 DOMAIN-SUFFIX,apple.com,DIRECT
 DOMAIN-SUFFIX,apple-dns.net,DIRECT
 DOMAIN-SUFFIX,icloud.com,DIRECT
-DOMAIN-SUFFIX,mushroomtrack.com,PROXY
 DOMAIN-SUFFIX,bing.com,DIRECT
 DOMAIN-SUFFIX,amazonaws.com.cn,DIRECT
+DOMAIN-SUFFIX,mushroomtrack.com,PROXY
 DOMAIN-SUFFIX,pdst.fm,PROXY
 DOMAIN-SUFFIX,megaphone.fm,PROXY
 DOMAIN-SUFFIX,omnycontent.com,PROXY
