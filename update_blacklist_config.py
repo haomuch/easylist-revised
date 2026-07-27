@@ -31,6 +31,7 @@ DOMAIN-SUFFIX,akadns.net,DIRECT
 DOMAIN-SUFFIX,apple.com,DIRECT
 DOMAIN-SUFFIX,apple-dns.net,DIRECT
 DOMAIN-SUFFIX,icloud.com,DIRECT
+DOMAIN-SUFFIX,mushroomtrack.com,PROXY
 DOMAIN-SUFFIX,bing.com,DIRECT
 DOMAIN-SUFFIX,amazonaws.com.cn,DIRECT
 DOMAIN-SUFFIX,pdst.fm,PROXY
@@ -43,7 +44,6 @@ DOMAIN-SUFFIX,chrt.fm,PROXY
 DOMAIN-SUFFIX,files.oaiusercontent.com,PROXY
 DOMAIN-SUFFIX,grokipedia.com,PROXY
 DOMAIN-SUFFIX,gitflic.ru,PROXY
-DOMAIN-SUFFIX,mushroomtrack.com,PROXY
 DOMAIN-SUFFIX,dowjones.io,PROXY"""
 
 def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf'):
