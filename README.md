@@ -21,4 +21,4 @@ This repository provides customized and optimized filtering rules for Adblock an
 
 ## 🛠️ Customization
 
-Want to tweak the rules yourself? You can easily **fork this repository** and modify the scripts to build your own custom rules.
+Want to tweak the rules yourself? You can easily **fork this repository** and modify the scripts to build your own custom rules. You need to enable the Actions Workflow to update the two rules everyday automatically.
