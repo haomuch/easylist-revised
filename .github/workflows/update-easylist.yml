@@ -39,7 +39,7 @@ jobs:
             modified_easylist.txt
             optimized_blacklist.conf
           name: Latest EasyList Update
-          body: \"Automated daily update of EasyList and Blacklist config.\"
+          body: Automated daily update of EasyList and Blacklist config.
           draft: false
           prerelease: false
         env:

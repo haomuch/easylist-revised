@@ -34,6 +34,7 @@ DOMAIN-SUFFIX,icloud.com,DIRECT
 DOMAIN-SUFFIX,bing.com,DIRECT
 DOMAIN-SUFFIX,amazonaws.com.cn,DIRECT
 DOMAIN-SUFFIX,mushroomtrack.com,PROXY
+DOMAIN-SUFFIX,sidestore.io,PROXY
 DOMAIN-SUFFIX,pdst.fm,PROXY
 DOMAIN-SUFFIX,megaphone.fm,PROXY
 DOMAIN-SUFFIX,omnycontent.com,PROXY
