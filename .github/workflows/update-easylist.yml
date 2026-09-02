@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
         with:
-          token: ${{ secrets.PAT_TOKEN }}  # 使用 PAT_TOKEN 允许触发后续的 workflow 并拥有推送权限
+          token: ${{ secrets.GITHUB_TOKEN }}  # 使用 GITHUB_TOKEN 提高安全性
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -43,4 +43,4 @@ jobs:
           draft: false
           prerelease: false
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

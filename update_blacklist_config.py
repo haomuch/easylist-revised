@@ -20,7 +20,6 @@ RULES_TO_REMOVE = {
     "DOMAIN-SUFFIX,onedrive.live.com,Proxy",
     "DOMAIN-SUFFIX,mobile.pipe.aria.microsoft.com,Proxy",
     "DOMAIN-SUFFIX,vortex.data.microsoft.com,Proxy",
-    "DOMAIN-SUFFIX,sidestore.io,Proxy",
     "DOMAIN-SUFFIX,tencent.com,Proxy",
     "DOMAIN-SUFFIX,in.appcenter.ms,Proxy"
 }
