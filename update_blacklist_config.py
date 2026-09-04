@@ -3,25 +3,19 @@ import requests
 
 # 提取需要移除的规则列表，转为集合 (Set) 以提高匹配效率
 RULES_TO_REMOVE = {
-    "DOMAIN-SUFFIX,microsoft.com,Proxy",
-    "DOMAIN-SUFFIX,live.com,Proxy",
     "DOMAIN-SUFFIX,api.onedrive.com,Proxy",
     "DOMAIN-SUFFIX,skyapi.live.net,Proxy",
     "DOMAIN-SUFFIX,odc.officeapps.live.com,Proxy",
     "DOMAIN-SUFFIX,cdn.apple-mapkit.com,Proxy",
     "DOMAIN-SUFFIX,apple.news,Proxy",
-    "DOMAIN-SUFFIX,apps.mzstatic.com,Proxy",
-    "DOMAIN-SUFFIX,bl.com,Proxy",
     "DOMAIN-KEYWORD,amazon,Proxy",
     "DOMAIN-KEYWORD,aws,Proxy",
     "DOMAIN-SUFFIX,cachefly.net,Proxy",
-    "DOMAIN-SUFFIX,globalsign.com,Proxy",
+    "DOMAIN-SUFFIX,ocsp.globalsign.com,Proxy",
     "DOMAIN-SUFFIX,onedrive.com,Proxy",
     "DOMAIN-SUFFIX,onedrive.live.com,Proxy",
     "DOMAIN-SUFFIX,mobile.pipe.aria.microsoft.com,Proxy",
-    "DOMAIN-SUFFIX,vortex.data.microsoft.com,Proxy",
-    "DOMAIN-SUFFIX,tencent.com,Proxy",
-    "DOMAIN-SUFFIX,in.appcenter.ms,Proxy"
+    "DOMAIN-SUFFIX,vortex.data.microsoft.com,Proxy"
 }
 
 # 新增规则列表
@@ -143,10 +137,8 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
         # 忽略大小写查找段落
         idx = processed_content.lower().find(insertion_point.lower())
         if idx != -1:
-            # 获取原文本中实际的大小写形式（保持兼容性）
-            actual_insertion = processed_content[idx:idx+len(insertion_point)]
-            parts = processed_content.split(actual_insertion, 1)
-            final_content = parts[0] + actual_insertion + "\n" + new_rules.strip() + "\n" + parts[1]
+            insert_pos = idx + len(insertion_point)
+            final_content = processed_content[:insert_pos] + "\n" + new_rules.strip() + "\n" + processed_content[insert_pos:]
             print("Successfully inserted new rules into the '[Rule]' section.")
         else:
             print("Warning: '[Rule]' section not found. Appending rules to the end.")
