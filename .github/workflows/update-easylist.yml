@@ -37,7 +37,7 @@ jobs:
             echo "❌ modified_easylist.txt not found!"
             exit 1
           fi
-          if ! grep -q "\[Adblock Plus\]" modified_easylist.txt; then
+          if ! grep -q "\[Adblock Plus" modified_easylist.txt; then
             echo "❌ Invalid EasyList format!"
             exit 1
           fi
