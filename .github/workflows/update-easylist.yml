@@ -30,10 +30,33 @@ jobs:
       - name: Run EasyList update script
         run: python update_easylist.py
 
+      - name: Validate EasyList output
+        run: |
+          set -e
+          if [ ! -f modified_easylist.txt ]; then
+            echo "❌ modified_easylist.txt not found!"
+            exit 1
+          fi
+          if ! grep -q "\[Adblock Plus\]" modified_easylist.txt; then
+            echo "❌ Invalid EasyList format!"
+            exit 1
+          fi
+          echo "✅ EasyList validation passed"
+
       - name: Run Blacklist update script
         run: python update_blacklist_config.py
 
+      - name: Validate Blacklist output
+        run: |
+          set -e
+          if [ ! -f optimized_blacklist.conf ]; then
+            echo "❌ optimized_blacklist.conf not found!"
+            exit 1
+          fi
+          echo "✅ Blacklist validation passed"
+
       - name: Upload to Release
+        if: success()
         uses: softprops/action-gh-release@v3
         with:
           tag_name: latest
