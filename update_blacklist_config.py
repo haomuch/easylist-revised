@@ -53,6 +53,21 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
 
         original_content = response.text
         lines = original_content.splitlines()
+
+        # 优化点 5: 内容有效性校验。源站异常时可能返回空内容或 HTML 错误页，
+        # 必须在写盘前拦截，否则残缺配置会被直接发布到 Release
+        if not original_content.strip():
+            print("Error: the downloaded config is empty.", file=sys.stderr)
+            sys.exit(1)
+
+        if not any(line.strip().lower() == "[rule]" for line in lines):
+            print(
+                "Error: '[Rule]' section not found. The downloaded file is not a valid "
+                "Shadowrocket config.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+
         updated_lines = []
         removed_count = 0
 
@@ -131,19 +146,17 @@ def update_config_file(url, new_rules, output_filename='optimized_blacklist.conf
         if removed_count > 0:
             print(f"Successfully removed {removed_count} RULES_TO_REMOVE entries.")
 
-        # Step 3: 查找插入点并添加新规则
-        insertion_point = "[Rule]"
-        
-        # 忽略大小写查找段落
-        idx = processed_content.lower().find(insertion_point.lower())
-        if idx != -1:
-            insert_pos = idx + len(insertion_point)
-            final_content = processed_content[:insert_pos] + "\n" + new_rules.strip() + "\n" + processed_content[insert_pos:]
-            print("Successfully inserted new rules into the '[Rule]' section.")
-        else:
-            print("Warning: '[Rule]' section not found. Appending rules to the end.")
-            final_content = processed_content + "\n" + new_rules.strip()
-            
+        # Step 3: 定位 [Rule] 段落并添加新规则
+        # 整行匹配而非子串查找，避免注释或其他段落中的 "[rule]" 造成插入错位
+        rule_idx = next(
+            i for i, line in enumerate(updated_lines) if line.strip().lower() == "[rule]"
+        )
+        insert_pos = len("\n".join(updated_lines[: rule_idx + 1]))
+        final_content = (
+            processed_content[:insert_pos] + "\n" + new_rules.strip() + processed_content[insert_pos:]
+        )
+        print("Successfully inserted new rules into the '[Rule]' section.")
+
         # Step 4: 保存更新后的文件
         with open(output_filename, 'w', encoding='utf-8') as f:
             f.write(final_content)
